@@ -31,6 +31,12 @@ FactoryBot.define do
   end
 end
 ````
+* API token based authentication with Ruby on Rails 5: Follow the instructions in the link below...
+Link: https://www.pluralsight.com/guides/token-based-authentication-with-ruby-on-rails-5-api
+Warning: there's a typo in the Encoding and decoding JWT (JSON web token) section
+
+
+
 
 #### Clipboard stuff
 * http://localhost:3000/reviews?city=East
