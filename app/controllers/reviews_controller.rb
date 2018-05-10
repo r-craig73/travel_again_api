@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     if @review.destroy!
       render status: 200, json: {
-       message: "Your review was deleted.  Boom"
+       message: "Your review is deleted.  Boom!"
        }
     end
 
