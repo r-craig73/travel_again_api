@@ -4,5 +4,5 @@ FactoryBot.define do
     city('Mexico City')
     comment('Very big and exciting city. Ole!')
   end
-  
+
 end
