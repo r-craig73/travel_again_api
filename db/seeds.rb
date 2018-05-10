@@ -1,5 +1,7 @@
 class Seed
 
+  Review.destroy_all
+
   def self.begin
     seed = Seed.new
     seed.generate_reviews
