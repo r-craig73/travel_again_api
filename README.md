@@ -33,28 +33,26 @@ end
 ````
 * API token based authentication with Ruby on Rails 5: Follow the instructions in the link below...
 Link: https://www.pluralsight.com/guides/token-based-authentication-with-ruby-on-rails-5-api
-Warning: there's a typo in the Encoding and decoding JWT (JSON web token) section (aka `lib/json_web_token.rb` ). Use the code below...  Use Postman POST to acquire the auth_token, then in Postman GET place the Authorization/auth_token in the header section of `http://localhost:3000/reviews`
+Warning: there's a typo in the Encoding and decoding JWT (JSON web token) section (aka `lib/json_web_token.rb` ). Use the code below...  Use Postman POST to acquire the auth_token, then use Postman GET and place the Authorization/auth_token in the header section of `http://localhost:3000/reviews`
 
 ````
 class JsonWebToken
  class << self
    def encode(payload, exp = 36.hours.from_now)
      payload[:exp] = exp.to_i
-    #  JWT.encode(payload, Rails.application.secrets.secret_key_base)
      JWT.encode(payload, Rails.application.secret_key_base)
    end
 
    def decode(token)
-    #  body = JWT.decode(token, Rails.application.secrets.secret_key_base)[0]
      body = JWT.decode(token, Rails.application.secret_key_base)[0]
      HashWithIndifferentAccess.new body
-   rescue
+     rescue
      nil
    end
  end
- 
+
 end
 ````
 
-#### Clipboard stuff
+### Using scope to search by city
 * http://localhost:3000/reviews?city=East
