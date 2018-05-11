@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   root :to => 'reviews#index'
 
+  post 'authenticate', to: 'authentication#authenticate'
+
 end
